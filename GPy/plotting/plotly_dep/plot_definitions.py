@@ -121,9 +121,9 @@ class PlotlyPlots(AbstractPlottingLibrary):
             figure.append_trace(Scatter(x=[], y=[], name='', showlegend=False), 1, 1)
         from ..gpy_plot.plot_util import in_ipynb
         if in_ipynb():
-            return py_offline.iplot(figure, filename=filename)#self.current_states[hex(id(figure))]['filename'])
+            return py_offline.iplot(figure, show_link=False, filename=filename)#self.current_states[hex(id(figure))]['filename'])
         else:
-            return py_offline.plot(figure, filename=filename)#self.current_states[hex(id(figure))]['filename'])
+            return py_offline.plot(figure, show_link=False, filename=filename)#self.current_states[hex(id(figure))]['filename'])
 
     def scatter(self, ax, X, Y, Z=None, color=Tango.colorsHex['mediumBlue'], cmap=None, label=None, marker='o', marker_kwargs=None, **kwargs):
         try:
